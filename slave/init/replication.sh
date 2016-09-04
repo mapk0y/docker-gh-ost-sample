@@ -1,0 +1,4 @@
+mysql -uroot -p${MYSQL_ROOT_PASSWORD} -e 'CHANGE MASTER TO MASTER_HOST="master", MASTER_USER="repl", MASTER_PASSWORD="replpass", MASTER_LOG_FILE="mysql-bin.000001", MASTER_LOG_POS=4;'
+sleep 5 
+mysql -uroot -p${MYSQL_ROOT_PASSWORD} -e 'START SLAVE'
+
